@@ -17,12 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from api import views
-from api.views import FoodModelViewSet, FoodModelsViewSet
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path(r'FoodModel/<int:pk>', FoodModelViewSet.as_view(), name='FoodModels'),
-    path(r'FoodModel', FoodModelsViewSet.as_view(), name="FoodModel"),
+    path(r'admin/', admin.site.urls),
     path('', include('api.urls'))
 ]
